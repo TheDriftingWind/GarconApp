@@ -13,5 +13,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true"
+        android:text="Restaurant Reservations"
+        android:id="@+id/textView"
+        android:onClick="onClick"
+        />
+
+    <Button
+        android:text="I'm an Owner"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:onClick="onClick"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/owner_button" />
+
+    <Button
+        android:text="I'm a Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/owner_button"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/customer_button" />
 </RelativeLayout>
