@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("UserType", "Owner"); //Will be used to open the specific fragment
         }
 
-        else{
+        else if(view.getId() == R.id.customer_button){
             intent.putExtra("UserType", "Customer");
         }
 
