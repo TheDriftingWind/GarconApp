@@ -1,6 +1,7 @@
 package charleszhu.qunnipiac.edu.gittest;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -17,6 +18,10 @@ import java.security.acl.Owner;
 public class OwnerFragment extends Fragment {
 
 
+    static interface OwnerFragmentListener{
+        void onOwnerClick(View view);
+    }
+private OwnerFragmentListener listener;
     public OwnerFragment() {
         // Required empty public constructor
     }
@@ -30,10 +35,16 @@ public class OwnerFragment extends Fragment {
     }
 
 
-    public void onClick(View view){
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        this.listener = (OwnerFragmentListener)activity;
+    }
+
+    public void onOwnerClick(View view){
 
         if(view.getId()==R.id.view_button){
-          //  startActivity(new Intent(getContext(), ViewReservationActivity.class));
+            startActivity(new Intent(getActivity(),ViewReservationActivity.class));
         }
 
         if(view.getId()==R.id.add_button){

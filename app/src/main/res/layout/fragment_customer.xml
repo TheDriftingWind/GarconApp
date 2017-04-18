@@ -10,11 +10,16 @@
         android:layout_height="wrap_content"
         android:text="@string/buttonMakeReservation"
         android:layout_gravity="center_horizontal"
+        android:onClick="onCustomerClick"
+        android:id="@+id/add_button"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCustomerClick"
+        android:id="@+id/view_button"
+
         android:text="@string/buttonViewReservation"
         android:layout_gravity="center_horizontal"
         />

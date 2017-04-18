@@ -7,7 +7,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-public class UserActivity extends Activity {
+public class UserActivity extends Activity implements OwnerFragment.OwnerFragmentListener , CustomerFragment.CustomerFragmentListener{
 
     private String userType;
     private OwnerFragment fragmentOwner;
@@ -49,5 +49,32 @@ public class UserActivity extends Activity {
 
 
         }
+    }
+
+    public void onOwnerClick(View view){
+
+        if(view.getId()==R.id.view_button){
+            startActivity(new Intent(UserActivity.this,ViewReservationActivity.class));
+        }
+
+        if(view.getId()==R.id.add_button){
+            startActivity(new Intent(UserActivity.this, MakeReservationActivity.class));
+        }
+
+        if (view.getId()==R.id.edit_button) {
+            startActivity(new Intent(UserActivity.this, EditReservationActivity.class));
+        }
+    }
+
+    public void onCustomerClick(View view){
+
+        if(view.getId()==R.id.view_button){
+            startActivity(new Intent(UserActivity.this,ViewReservationActivity.class));
+        }
+
+        if(view.getId()==R.id.add_button){
+            startActivity(new Intent(UserActivity.this, MakeReservationActivity.class));
+        }
+
     }
 }
