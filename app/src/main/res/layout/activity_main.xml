@@ -16,7 +16,6 @@
         android:layout_centerHorizontal="true"
         android:text="Restaurant Reservations"
         android:id="@+id/textView"
-        android:onClick="onClick"
         />
 
     <Button
@@ -34,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/owner_button"
+        android:onClick="onClick"
         android:layout_centerHorizontal="true"
         android:id="@+id/customer_button" />
 </RelativeLayout>
