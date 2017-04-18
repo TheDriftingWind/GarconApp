@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_make_reservation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_centerHorizontal="true"
+    tools:context="charleszhu.qunnipiac.edu.gittest.EditReservationActivity">
+
+
+
+    <TextView
+        android:text="Create Reservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"
+        android:id="@+id/textView3" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:spinnersShown="true"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker2"
+        tools:theme="@android:style/Widget.Material.Light.TimePicker"
+        android:clickable="true"
+        android:timePickerMode="spinner"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:layout_alignTop="@+id/datePicker"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:text="Date:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/datePicker"
+        android:layout_alignEnd="@+id/datePicker" />
+
+    <TextView
+        android:text="Time:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/timePicker2"
+        android:layout_marginEnd="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/datePicker"
+        android:layout_marginBottom="69dp"
+        android:id="@+id/editText2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_above="@+id/editText2"
+        android:layout_alignEnd="@+id/datePicker"
+        android:layout_marginBottom="100dp"
+        android:id="@+id/editText3" />
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText3"
+        android:layout_alignStart="@+id/editText3"
+        android:id="@+id/textView5" />
+
+    <TextView
+        android:text="Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="41dp"
+        android:id="@+id/textView6"
+        android:layout_above="@+id/editText2"
+        android:layout_alignStart="@+id/editText2" />
+
+    <Button
+        android:text="Reserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginBottom="14dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/editText2" />
+</RelativeLayout>
