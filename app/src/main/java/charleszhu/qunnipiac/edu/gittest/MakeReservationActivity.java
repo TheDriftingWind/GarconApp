@@ -1,9 +1,9 @@
 package charleszhu.qunnipiac.edu.gittest;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class MakeReservationActivity extends AppCompatActivity {
+public class MakeReservationActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

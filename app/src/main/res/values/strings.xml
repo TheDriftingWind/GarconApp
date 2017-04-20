@@ -4,6 +4,10 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Action bar Strings-->
+    <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
+
     <!-- Fragment Button Strings -->
     <string name="buttonMakeReservation">Make Reservations</string>
     <string name="buttonViewReservation">View Reservations</string>
