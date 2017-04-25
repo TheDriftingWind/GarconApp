@@ -9,8 +9,13 @@
     <Button
         android:id="@+id/view_button"
         android:text="View Reservations"
-        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:background="#ff7c2d"
+        android:textColor="#FFF"
+        android:padding="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
         android:onClick="onOwnerClick"/>
 
@@ -18,16 +23,26 @@
         android:id="@+id/add_button"
         android:text="Add Reservation"
         android:layout_below="@id/view_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:background="#ff7c2d"
+        android:textColor="#FFF"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+
         android:layout_centerHorizontal="true"
         android:onClick="onOwnerClick"/>
     <Button
         android:id="@+id/edit_button"
         android:text="Edit Reservation"
         android:layout_below="@+id/add_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:background="#ff7c2d"
+        android:textColor="#FFF"
+        android:padding="10dp"
         android:layout_centerHorizontal="true"
         android:onClick="onOwnerClick"/>
 

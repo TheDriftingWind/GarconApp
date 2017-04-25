@@ -4,33 +4,43 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ff6102"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="charleszhu.qunnipiac.edu.gittest.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@mipmap/garconlogo"
         android:layout_centerHorizontal="true"
-        android:text="Restaurant Reservations"
-        android:id="@+id/textView"
-        />
+        android:id="@+id/logo"/>
 
     <Button
         android:text="I'm an Owner"
-        android:layout_marginTop="100dp"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
+        android:layout_below="@id/logo"
         android:onClick="onClick"
+        android:textSize="20sp"
+        android:background="#ff7c2d"
+        android:textColor="#FFF"
         android:layout_centerHorizontal="true"
         android:id="@+id/owner_button" />
 
     <Button
         android:text="I'm a Customer"
-        android:layout_width="wrap_content"
+        android:textSize="20sp"
+
+        android:textColor="#FFF"
+        android:background="#ff7c2d"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/owner_button"
         android:onClick="onClick"
@@ -42,11 +52,13 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
+        android:textColor="#FFF"
         android:layout_marginTop="56dp"
+        android:background="#ff7c2d"
+        android:visibility="invisible"
         android:id="@+id/password_et"
         android:layout_below="@+id/customer_button"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"/>
+         />
 
     <TextView
         android:text="Welcome owner! Please enter your password."
@@ -55,6 +67,7 @@
         android:layout_marginTop="35dp"
         android:id="@+id/owner_greeting"
         android:visibility="invisible"
+        android:textColor="#FFF"
         android:layout_below="@+id/customer_button"
         android:layout_centerHorizontal="true" />
 
@@ -62,9 +75,11 @@
         android:text="Sign in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password_et"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:background="#0297ff"
+    android:textColor="#FFF"
+        android:visibility="invisible"
         android:id="@+id/signin_button"
-        android:visibility="invisible" />
+        android:layout_alignTop="@+id/password_et"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp" />
 </RelativeLayout>
