@@ -16,6 +16,7 @@ public class ReservationDataSource {
     private String[] customerColumns = {dbHelper.CUSTOMER_ID, dbHelper.CUSTOMER_NAME,
             dbHelper.CUSTOMER_PHONE};
 
+    //RESERVATION TABLE
     public void createReservation(){
         //TODO: Make reservation
     }
@@ -36,6 +37,7 @@ public class ReservationDataSource {
         //TODO: Convert Cursor to Reservation
     }
 
+    //CUSTOMER TABLE
     public void addCustomer(){
         //TODO: Add customer to table
     }
@@ -43,6 +45,8 @@ public class ReservationDataSource {
     public void forgetCustomer(){
         //TODO: Remove customer from table
     }
+
+
 
 
 }
