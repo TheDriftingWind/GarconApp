@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="charleszhu.qunnipiac.edu.gittest">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,9 +23,8 @@
         <activity android:name=".EditReservationActivity" />
         <activity android:name=".MakeReservationActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".ViewReservationActivity"></activity>
-        <activity android:name=".UserActivity"></activity>
-
+        <activity android:name=".ViewReservationActivity" />
+        <activity android:name=".UserActivity" />
     </application>
 
 </manifest>
