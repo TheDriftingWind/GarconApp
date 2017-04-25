@@ -1,17 +1,20 @@
 package charleszhu.qunnipiac.edu.gittest;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.app.FragmentTransaction;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ShareActionProvider;
 
 public class UserActivity extends Activity implements OwnerFragment.OwnerFragmentListener , CustomerFragment.CustomerFragmentListener{
 
     private String userType;
     private OwnerFragment fragmentOwner;
     private CustomerFragment fragmentCustomer;
+    private ShareActionProvider shareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,5 +79,15 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
             startActivity(new Intent(UserActivity.this, MakeReservationActivity.class));
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_user, menu);
+        //prepare the share action for the share item in the action bar
+        MenuItem menuItem = menu.findItem(R.id.action_share);
+        shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
+        return super.onCreateOptionsMenu(menu);
     }
 }

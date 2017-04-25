@@ -1,10 +1,10 @@
 package charleszhu.qunnipiac.edu.gittest;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TimePicker;
 
-public class EditReservationActivity extends AppCompatActivity {
+public class EditReservationActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
