@@ -1,10 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context="charleszhu.qunnipiac.edu.gittest.OwnerFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="charleszhu.qunnipiac.edu.gittest.OwnerFragment"
+    android:orientation="vertical"
+    >
 
     <Button
         android:id="@+id/view_button"
@@ -30,7 +30,6 @@
         android:textColor="#FFF"
         android:padding="10dp"
         android:layout_marginBottom="10dp"
-
         android:layout_centerHorizontal="true"
         android:onClick="onOwnerClick"/>
     <Button
@@ -46,4 +45,4 @@
         android:layout_centerHorizontal="true"
         android:onClick="onOwnerClick"/>
 
-</RelativeLayout>
+</LinearLayout>

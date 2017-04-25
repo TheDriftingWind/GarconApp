@@ -17,7 +17,7 @@
         android:background="@mipmap/garconlogo"
         android:layout_centerHorizontal="true"
         android:id="@+id/logo"/>
-
+       
     <Button
         android:text="I'm an Owner"
         android:layout_marginTop="20dp"
