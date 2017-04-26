@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
         }
 
         else if(view.getId() == R.id.customer_button){
-            startUserActivity("Customer");
+            startUserActivity("charleszhu.qunnipiac.edu.gittest.Customer");
         }
 
     }

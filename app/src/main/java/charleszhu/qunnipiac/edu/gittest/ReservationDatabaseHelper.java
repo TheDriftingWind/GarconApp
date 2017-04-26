@@ -13,7 +13,7 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "reservations"; //database name
     private static final int DB_VERSION = 1; //database version
 
-    //Customer Table -----------------------------------------------
+    //charleszhu.qunnipiac.edu.gittest.Customer Table -----------------------------------------------
     public static final String CUSTOMER_TABLE = "customer_table";
     public static final String CUSTOMER_ID = "id";
     public static final String CUSTOMER_NAME = "name";

@@ -1,6 +1,11 @@
 package charleszhu.qunnipiac.edu.gittest;
 
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Charles on 4/25/2017.
@@ -39,12 +44,42 @@ public class ReservationDataSource {
     }
 
     //CUSTOMER TABLE
-    public void addCustomer(){
-        //TODO: Add customer to table
+    public Customer addCustomer(String name, String phone){
+        ContentValues values = new ContentValues();
+        values.put(dbHelper.CUSTOMER_NAME, name);
+        values.put(dbHelper.CUSTOMER_PHONE, phone);
+        long insertId = db.insert(dbHelper.CUSTOMER_TABLE, null, values);
+       Cursor cursor = db.query(dbHelper.CUSTOMER_TABLE, customerColumns, dbHelper.CUSTOMER_ID + " = " + insertId, null, null, null, null);
+        cursor.moveToFirst();
+        Customer newCustomer = cursorToCustomer(cursor);
+        cursor.close();
+        return newCustomer;
     }
 
-    public void forgetCustomer(){
-        //TODO: Remove customer from table
+
+   public List<Customer> getAllCustomers(){
+       List<Customer> customers = new ArrayList<Customer>();
+       Cursor cursor = db.query(dbHelper.CUSTOMER_TABLE, customerColumns, null, null, null, null, null);
+
+       while(!cursor.isAfterLast()){
+           Customer customer = cursorToCustomer(cursor);
+           customers.add(customer);
+           cursor.moveToNext();
+       }
+       cursor.close();
+       return customers;
+    }
+
+    public Customer cursorToCustomer(Cursor cursor) {
+        Customer customer = new Customer();
+        customer.setId(cursor.getLong(0));
+        customer.setName(cursor.getString(1));
+        customer.setPhone(cursor.getString(2));
+        return customer;
+    }
+    public void forgetCustomer(Customer customer){
+        long id = customer.getId();
+        db.delete(dbHelper.CUSTOMER_TABLE, dbHelper.CUSTOMER_NAME+ " = " + id, null);
     }
 
 

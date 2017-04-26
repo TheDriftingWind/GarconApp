@@ -4,7 +4,6 @@
     android:id="@+id/activity_edit_reservation"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff6102"
 
     android:layout_centerHorizontal="true"
     tools:context="charleszhu.qunnipiac.edu.gittest.EditReservationActivity">
@@ -20,7 +19,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="12dp"
-        android:textColor="#FFF"
         android:id="@+id/textView3" />
 
     <DatePicker
@@ -52,11 +50,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        android:textColor="#FFF"
 
         android:layout_below="@+id/textView3"
         android:layout_toStartOf="@+id/timePicker2"
         android:layout_marginEnd="40dp" />
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/datePicker"
+        android:id="@+id/nametv" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -70,17 +74,10 @@
         android:layout_below="@id/nametv"
         android:id="@+id/editText3" />
 
-    <TextView
-        android:text="Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFF"
-    android:layout_below="@id/datePicker"
-        android:id="@+id/nametv" />
+
 
     <TextView
         android:text="Phone"
-        android:textColor="#FFF"
 android:layout_below="@id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,7 +100,6 @@ android:layout_below="@id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
-        android:textColor="#FFF"
 
         android:layout_above="@+id/timePicker2"
         android:layout_toEndOf="@+id/textView3"
@@ -123,7 +119,6 @@ android:layout_below="@id/editText3"
 
     <TextView
         android:text="Party Size"
-        android:textColor="#FFF"
         android:layout_below="@id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
