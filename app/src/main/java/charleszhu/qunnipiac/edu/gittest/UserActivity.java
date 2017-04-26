@@ -39,7 +39,7 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             if (userType.equals("Owner")) {
                 ft.replace(R.id.fragmentContainer, fragmentOwner);
-            } else if (userType.equals("Customer")) {
+            } else if (userType.equals("charleszhu.qunnipiac.edu.gittest.Customer")) {
                 ft.replace(R.id.fragmentContainer, fragmentCustomer);
             }
             /*
