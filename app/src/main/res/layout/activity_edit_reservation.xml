@@ -54,12 +54,13 @@
         android:layout_below="@+id/textView3"
         android:layout_toStartOf="@+id/timePicker2"
         android:layout_marginEnd="40dp" />
-
+  
     <TextView
         android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/datePicker"
+        android:textColor="#FFF"
         android:id="@+id/nametv" />
 
     <EditText
@@ -73,8 +74,6 @@
         android:ems="10"
         android:layout_below="@id/nametv"
         android:id="@+id/editText3" />
-
-
 
     <TextView
         android:text="Phone"
