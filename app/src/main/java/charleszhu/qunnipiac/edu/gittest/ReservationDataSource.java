@@ -86,7 +86,8 @@ public class ReservationDataSource {
 
     public List<Reservation> getALlReservations(){
         List<Reservation> reservations = new ArrayList<Reservation>();
-        Cursor cursor = db.query(ReservationDatabaseHelper.RESERVATION_TABLE, reservationColumns, null, null, null, null, null);
+        Cursor cursor = db.query(ReservationDatabaseHelper.RESERVATION_TABLE,
+                reservationColumns, null, null, null, null, null);
         cursor.moveToFirst();
         while(! cursor.isAfterLast()){
             Reservation reservation = cursorToReservation(cursor);
@@ -111,10 +112,11 @@ public class ReservationDataSource {
     //CUSTOMER TABLE
     public Customer addCustomer(String name, String phone){
         ContentValues values = new ContentValues();
-        values.put(dbHelper.CUSTOMER_NAME, name);
-        values.put(dbHelper.CUSTOMER_PHONE, phone);
-        long insertId = db.insert(dbHelper.CUSTOMER_TABLE, null, values);
-       Cursor cursor = db.query(dbHelper.CUSTOMER_TABLE, customerColumns, dbHelper.CUSTOMER_ID + " = " + insertId, null, null, null, null);
+        values.put(ReservationDatabaseHelper.CUSTOMER_NAME, name);
+        values.put(ReservationDatabaseHelper.CUSTOMER_PHONE, phone);
+        long insertId = db.insert(ReservationDatabaseHelper.CUSTOMER_TABLE, null, values);
+       Cursor cursor = db.query(ReservationDatabaseHelper.CUSTOMER_TABLE, customerColumns,
+               ReservationDatabaseHelper.CUSTOMER_ID + " = " + insertId, null, null, null, null);
         cursor.moveToFirst();
         Customer newCustomer = cursorToCustomer(cursor);
         cursor.close();
@@ -124,7 +126,8 @@ public class ReservationDataSource {
 
    public List<Customer> getAllCustomers(){
        List<Customer> customers = new ArrayList<Customer>();
-       Cursor cursor = db.query(dbHelper.CUSTOMER_TABLE, customerColumns, null, null, null, null, null);
+       Cursor cursor = db.query(ReservationDatabaseHelper.CUSTOMER_TABLE,
+               customerColumns, null, null, null, null, null);
 
        while(!cursor.isAfterLast()){
            Customer customer = cursorToCustomer(cursor);
@@ -144,7 +147,8 @@ public class ReservationDataSource {
     }
     public void forgetCustomer(Customer customer){
         long id = customer.getId();
-        db.delete(dbHelper.CUSTOMER_TABLE, dbHelper.CUSTOMER_NAME+ " = " + id, null);
+        db.delete(ReservationDatabaseHelper.CUSTOMER_TABLE,
+                ReservationDatabaseHelper.CUSTOMER_NAME+ " = " + id, null);
     }
 
 

@@ -5,6 +5,11 @@ package charleszhu.qunnipiac.edu.gittest;
  */
 
 public class Customer {
+
+    private long id;
+    private String name;
+    private String phone;
+
     public void setId(long id) {
         this.id = id;
     }
@@ -17,14 +22,11 @@ public class Customer {
         this.phone = phone;
     }
 
-    private long id;
-    private String name;
-    private String phone;
-
     public long getId(){
         return id;
     }
 
     public String getName(){return name;}
+
     public String getPhoneNum(){return phone;}
 }
