@@ -58,6 +58,16 @@
         android:layout_toStartOf="@+id/timePicker2"
         android:layout_marginEnd="40dp" />
 
+
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+    android:layout_below="@id/datePicker"
+        android:id="@+id/nametv" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,14 +79,6 @@
         android:ems="10"
         android:layout_below="@id/nametv"
         android:id="@+id/editText3" />
-
-    <TextView
-        android:text="Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFF"
-    android:layout_below="@id/datePicker"
-        android:id="@+id/nametv" />
 
     <TextView
         android:text="Phone"
