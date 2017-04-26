@@ -18,77 +18,48 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="12dp"
-        android:id="@+id/textView3" />
-
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/datePicker"
-        android:spinnersShown="true"
-        android:scaleX=".5"
-        android:scaleY=".5"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"
-        android:layout_below="@+id/textView2"
-        android:layout_alignEnd="@+id/textView3" />
-
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker2"
-        tools:theme="@android:style/Widget.Material.Light.TimePicker"
-        android:clickable="true"
-        android:timePickerMode="spinner"
-        android:scaleX=".5"
-        android:scaleY=".5"
-        android:layout_alignTop="@+id/datePicker"
-        android:layout_alignStart="@+id/textView3" />
+        android:id="@+id/reservetv" />
 
     <TextView
         android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
         android:layout_below="@id/datePicker"
-        android:id="@+id/nametv" />
+        android:id="@+id/name_tv" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFF"
         android:background="#ff7c2d"
+        android:layout_centerHorizontal="true"
 
         android:inputType="textPersonName"
         android:text="Name"
         android:ems="10"
-        android:layout_below="@id/nametv"
-        android:id="@+id/editText3" />
+        android:layout_below="@id/name_tv"
+        android:id="@+id/name_et" />
 
 
 
     <TextView
         android:text="Phone"
-        android:layout_below="@id/editText3"
+        android:layout_below="@id/name_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView6"/>
+        android:layout_centerHorizontal="true"
 
-    <Button
-        android:text="Reserve"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:background="#ff7c2d"
-
-        android:id="@+id/button"
-        android:layout_marginBottom="14dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/editText2" />
+        android:id="@+id/phonetv"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
         android:inputType="phone"
-        android:layout_below="@id/textView6"
+        android:layout_below="@id/phonetv"
         android:ems="10"
         android:textColor="#FFF"
         android:background="#ff7c2d"
@@ -101,6 +72,7 @@
         android:layout_below="@id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
 
         android:id="@+id/partysizetv"/>
 
@@ -117,14 +89,41 @@
         android:id="@+id/partysize_et"
         android:layout_alignStart="@+id/editText3"/>
 
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:spinnersShown="true"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/reservetv"
+        android:layout_alignParentStart="true" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker2"
+        tools:theme="@android:style/Widget.Material.Light.TimePicker"
+        android:clickable="true"
+        android:timePickerMode="spinner"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:layout_alignTop="@+id/datePicker"
+        android:layout_alignStart="@+id/partysizetv" />
+
     <TextView
         android:text="Date:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
 
-        android:layout_below="@+id/textView3"
-        android:layout_toStartOf="@+id/timePicker2" />
+        android:layout_alignTop="@+id/datePicker"
+        android:layout_toStartOf="@+id/timePicker2"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:text="Time:"
@@ -132,6 +131,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
 
-        android:layout_below="@+id/textView3"
-        android:layout_toEndOf="@+id/datePicker" />
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/reservetv" />
+
+    <Button
+        android:text="Reserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:background="#ff7c2d"
+
+        android:id="@+id/button"
+        android:layout_below="@+id/partysize_et"
+        android:layout_alignEnd="@+id/partysizetv" />
 </RelativeLayout>
