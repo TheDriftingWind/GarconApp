@@ -15,7 +15,6 @@ import java.util.List;
  * Created by Charles on 4/25/2017.
  */
 
-//TODO: add both reservation table and customer table implementation in this 1 class
 public class ReservationDataSource {
 
     private SQLiteDatabase db;
