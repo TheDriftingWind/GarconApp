@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ReservationDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "reservations"; //database name
+    public static final String DB_NAME = "reservations"; //database name
     private static final int DB_VERSION = 1; //database version
 
     //charleszhu.qunnipiac.edu.gittest.Customer Table -----------------------------------------------
@@ -20,8 +20,8 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
     public static final String CUSTOMER_PHONE = "phone";
 
     private static final String CUSTOMER_TABLE_CREATE = "create table " + CUSTOMER_TABLE +
-            " (" + CUSTOMER_ID + "integer primary key autoincrement, " + CUSTOMER_NAME + " text not null, " +
-            CUSTOMER_PHONE + "text not null);";
+            "(" + CUSTOMER_ID + " integer primary key autoincrement, " + CUSTOMER_NAME + " text not null, " +
+            CUSTOMER_PHONE + " text not null);";
     //Reservation Table --------------------------------------------
     public static final String RESERVATION_TABLE = "reservations_table";
     public static final String RESERVATION_KEY = "_id";
@@ -31,8 +31,9 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
     public static final String RESERVATION_PARTYSIZE = "party";
 
     private static final String DB_CREATE = "create table " +
-            RESERVATION_TABLE + " (" + RESERVATION_KEY + " integer primary key autoincrement, "
-            + RESERVATION_CUSTOMER + " text not null, " + RESERVATION_DATE + " text not null, " + RESERVATION_TIME + " text not null, "
+            RESERVATION_TABLE + "(" + RESERVATION_KEY + " integer primary key autoincrement, "
+            + RESERVATION_CUSTOMER + " text not null, " + RESERVATION_DATE + " text not null, "
+            + RESERVATION_TIME + " text not null, "
             + RESERVATION_PARTYSIZE + " integer not null);";
     // --------------------------------------------------------------
     public ReservationDatabaseHelper(Context context) {
