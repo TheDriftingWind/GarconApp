@@ -34,10 +34,11 @@ public class ReservationDataSourceTest {
 
     @Test
     public void createReservation() throws Exception {
-        dataSource.createReservation("Rick","06/25/2017","6:00PM", 6);
+        Customer customer = dataSource.addCustomer("Rick", "137-250-8828");
+        dataSource.createReservation(customer,"06/25/2017","6:00PM", 6);
         List<Reservation> reservations = dataSource.getAllReservations();
         assertEquals(reservations.size(), 1);
-        assertTrue(reservations.get(0).getCustomer().equals("Rick")
+        assertTrue(reservations.get(0).getCustomer() == (customer.getId())
         && reservations.get(0).getDate().equals("06/25/2017")
                 && reservations.get(0).getTime().equals("6:00PM")
                 && (reservations.get(0).getPartySize() == 6) );
@@ -45,7 +46,8 @@ public class ReservationDataSourceTest {
 
     @Test
     public void deleteReservation() throws Exception {
-        dataSource.createReservation("Rick","06/25/2017","6:00PM", 6);
+        Customer customer = dataSource.addCustomer("Rick","137-250-8828");
+        dataSource.createReservation(customer,"06/25/2017","6:00PM", 6);
         List<Reservation> reservations = dataSource.getAllReservations();
         dataSource.deleteReservation(reservations.get(0));
         reservations = dataSource.getAllReservations();
@@ -54,11 +56,12 @@ public class ReservationDataSourceTest {
 
     @Test
     public void changeReservation() throws Exception {
-        dataSource.createReservation("Rick","06/25/2017","6:00PM", 6);
+        Customer customer = dataSource.addCustomer("Morty","137-250-8829");
+        dataSource.createReservation(customer,"06/25/2017","6:00PM", 6);
         List<Reservation> reservations = dataSource.getAllReservations();
         dataSource.changeReservation(reservations.get(0), "07/1/2017", "9:30AM", 4);
         reservations = dataSource.getAllReservations();
-        assertTrue(reservations.get(0).getCustomer().equals("Rick")
+        assertTrue(reservations.get(0).getCustomer() == (customer.getId())
                 && reservations.get(0).getDate().equals("07/1/2017")
                 && reservations.get(0).getTime().equals("9:30AM")
                 && (reservations.get(0).getPartySize() == 4) );
