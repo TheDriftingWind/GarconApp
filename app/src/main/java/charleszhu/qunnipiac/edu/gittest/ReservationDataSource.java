@@ -102,11 +102,6 @@ public class ReservationDataSource {
 
     public Reservation cursorToReservation(Cursor cursor){
         Reservation reservation = new Reservation();
-//        reservation.setId(cursor.getLong(0));
-//        reservation.setCustomer(cursor.getString(1));
-//        reservation.setDate(cursor.getString(2));
-//        reservation.setTime(cursor.getString(3));
-//        reservation.setPartySize(cursor.getLong(4));
         reservation.setId(cursor.getLong(0));
         reservation.setCustomer(cursor.getLong(4));
         reservation.setDate(cursor.getString(1));
