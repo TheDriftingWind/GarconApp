@@ -44,7 +44,6 @@ public class ReservationDataSource {
     //RESERVATION TABLE
     public Reservation createReservation(Customer customer, String date, String time, long partySize){
         ContentValues values = new ContentValues();
-
         values.put(ReservationDatabaseHelper.RESERVATION_CUSTOMER_ID, customer.getId());
         values.put(ReservationDatabaseHelper.RESERVATION_DATE, date);
         values.put(ReservationDatabaseHelper.RESERVATION_TIME, time);

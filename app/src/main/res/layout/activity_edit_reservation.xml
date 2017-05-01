@@ -9,7 +9,6 @@
     tools:context="charleszhu.qunnipiac.edu.gittest.EditReservationActivity">
 
 
-
     <TextView
         android:text="Edit"
         android:textStyle="bold"
@@ -19,121 +18,187 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="12dp"
-        android:id="@+id/textView3" />
+        android:id="@+id/editv" />
 
-    <DatePicker
+    <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/datePicker"
-        android:spinnersShown="true"
-        android:scaleX=".5"
-        android:scaleY=".5"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"
-        android:layout_below="@+id/textView2"
-        android:layout_alignEnd="@+id/textView3" />
-
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker2"
-        tools:theme="@android:style/Widget.Material.Light.TimePicker"
-        android:clickable="true"
-        android:timePickerMode="spinner"
-        android:scaleX=".5"
-        android:scaleY=".5"
-        android:layout_alignTop="@+id/datePicker"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_height="200dp"
+        android:id="@+id/reservation_list"
+        android:layout_below="@id/editv">
+    </ListView>
 
     <TextView
         android:text="Date:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
+        android:id="@+id/datetv"
+        android:textSize="20sp"
 
-        android:layout_below="@+id/textView3"
-        android:layout_toStartOf="@+id/timePicker2"
-        android:layout_marginEnd="40dp" />
-  
-    <TextView
-        android:text="Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/datePicker"
-        android:textColor="#FFF"
-        android:id="@+id/nametv" />
+        android:layout_below="@+id/reservation_list"
+        android:layout_toEndOf="@+id/month_et" />
+
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:background="#ff7c2d"
+        android:text="01"
+        android:maxLength="2"
+        android:id="@+id/month_et"
+        android:layout_below="@id/datetv"/>
 
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_below="@id/nametv"
-        android:id="@+id/editText3" />
 
-    <TextView
-        android:text="Phone"
-android:layout_below="@id/editText3"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView6"/>
-
-    <Button
-        android:text="Finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:background="#ff7c2d"
-
-        android:id="@+id/button"
-        android:layout_marginBottom="14dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/editText2" />
+        android:text="2017"
+        android:maxLength="4"
+        android:id="@+id/year_et"
+        android:layout_alignBaseline="@+id/month_et"
+        android:layout_alignBottom="@+id/month_et"
+        android:layout_toEndOf="@+id/datetv" />
 
     <TextView
         android:text="Time:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-
-        android:layout_above="@+id/timePicker2"
-        android:layout_toEndOf="@+id/textView3"
-        android:layout_marginStart="37dp" />
+        android:id="@+id/timetv"
+        android:textSize="20sp"
+        android:layout_below="@+id/reservation_list"
+        android:layout_toStartOf="@+id/ampm_et" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01"
+        android:maxLength="2"
+        android:id="@+id/day_et"
+        android:layout_alignBaseline="@+id/month_et"
+        android:layout_alignBottom="@+id/month_et"
+        android:layout_toStartOf="@+id/name_et" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="00"
+        android:maxLength="2"
+        android:id="@+id/minute_et"
+        android:layout_below="@+id/timetv"
+        android:layout_toLeftOf="@+id/ampm_et" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08"
+        android:layout_below="@id/timetv"
+        android:maxLength="2"
+        android:layout_toLeftOf="@id/minute_et"
+        android:id="@+id/hour_et"
+         />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PM"
+        android:maxLength="2"
+        android:id="@+id/ampm_et"
+        android:layout_alignBaseline="@+id/minute_et"
+        android:layout_alignBottom="@+id/minute_et"
+        android:layout_toEndOf="@+id/name_et" />
+
+
+
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_below="@id/year_et"
+        android:id="@+id/name_tv" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:background="#ff7c2d"
+        android:layout_centerHorizontal="true"
+
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_below="@id/name_tv"
+        android:id="@+id/name_et" />
+
+
+
+    <TextView
+        android:text="Phone"
+        android:layout_below="@id/name_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:id="@+id/phonetv"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
         android:inputType="phone"
-        android:layout_below="@id/textView6"
+        android:layout_below="@id/phonetv"
         android:ems="10"
         android:textColor="#FFF"
         android:background="#ff7c2d"
 
-        android:id="@+id/editText2"
-        android:layout_alignStart="@+id/editText3"/>
+        android:id="@+id/phone_et"
+        />
 
     <TextView
         android:text="Party Size"
-        android:layout_below="@id/editText2"
+        android:layout_below="@id/phone_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
 
         android:id="@+id/partysizetv"/>
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="phone"
+        android:inputType="number"
         android:layout_below="@id/partysizetv"
         android:ems="10"
         android:textColor="#FFF"
         android:layout_centerHorizontal="true"
         android:background="#ff7c2d"
         android:layout_marginBottom="42dp"
-        android:id="@+id/partysize_et"
-        android:layout_alignStart="@+id/editText3"/>
+        android:id="@+id/partysize_et" />
+
+
+
+    <Button
+        android:text="Reserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:background="#ff7c2d"
+        android:onClick="onClick"
+        android:id="@+id/reservebtn"
+        android:layout_below="@+id/partysize_et"
+        android:layout_alignEnd="@+id/partysizetv" />
+    <Button
+        android:text="Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:background="#ff3134"
+        android:onClick="onClick"
+        android:id="@+id/deletebtn"
+        android:visibility="invisible"
+        android:layout_below="@+id/partysize_et"
+        android:layout_alignParentRight="true"
+
+         />
+
+
 </RelativeLayout>

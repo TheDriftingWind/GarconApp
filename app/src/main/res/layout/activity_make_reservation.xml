@@ -20,13 +20,103 @@
         android:layout_margin="12dp"
         android:id="@+id/reservetv" />
 
+
+    <TextView
+        android:text="Date:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datetv"
+
+        android:layout_below="@+id/reservetv"
+        android:layout_toEndOf="@+id/month_et" />
+    <TextView
+        android:text="Time:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timetv"
+
+        android:layout_below="@+id/reservetv"
+        android:layout_toEndOf="@+id/reservetv" />
+
+    <EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="number"
+    android:layout_below="@id/partysizetv"
+    android:ems="10"
+    android:textColor="#FFF"
+    android:layout_centerHorizontal="true"
+    android:background="#ff7c2d"
+    android:layout_marginBottom="42dp"
+    android:id="@+id/partysize_et" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01"
+        android:maxLength="2"
+        android:id="@+id/month_et"
+        android:layout_below="@id/datetv"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2017"
+        android:maxLength="4"
+        android:id="@+id/year_et"
+        android:layout_alignBaseline="@+id/month_et"
+        android:layout_alignBottom="@+id/month_et"
+        android:layout_toEndOf="@+id/datetv" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01"
+        android:maxLength="2"
+        android:id="@+id/day_et"
+        android:layout_alignBaseline="@+id/month_et"
+        android:layout_alignBottom="@+id/month_et"
+        android:layout_toStartOf="@+id/name_et" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00"
+        android:maxLength="2"
+        android:id="@+id/minute_et"
+        android:layout_below="@+id/timetv"
+        android:layout_alignStart="@+id/timetv" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08"
+        android:maxLength="2"
+        android:id="@+id/hour_et"
+        android:layout_alignBaseline="@+id/minute_et"
+        android:layout_alignBottom="@+id/minute_et"
+        android:layout_toStartOf="@+id/minute_et" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PM"
+        android:maxLength="2"
+        android:id="@+id/ampm_et"
+        android:layout_alignBaseline="@+id/minute_et"
+        android:layout_alignBottom="@+id/minute_et"
+        android:layout_toEndOf="@+id/name_et" />
+
+
+
+
     <TextView
         android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
 
-        android:layout_below="@id/datePicker"
+        android:layout_below="@id/year_et"
         android:id="@+id/name_tv" />
 
     <EditText
@@ -64,76 +154,19 @@
         android:textColor="#FFF"
         android:background="#ff7c2d"
 
-        android:id="@+id/editText2"
-        android:layout_alignStart="@+id/editText3"/>
+        android:id="@+id/phone_et"
+        />
 
     <TextView
         android:text="Party Size"
-        android:layout_below="@id/editText2"
+        android:layout_below="@id/phone_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
 
         android:id="@+id/partysizetv"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:layout_below="@id/partysizetv"
-        android:ems="10"
-        android:textColor="#FFF"
-        android:layout_centerHorizontal="true"
-        android:background="#ff7c2d"
-        android:layout_marginBottom="42dp"
-        android:id="@+id/partysize_et"
-        android:layout_alignStart="@+id/editText3"/>
 
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/datePicker"
-        android:spinnersShown="true"
-        android:scaleX=".5"
-        android:scaleY=".5"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/reservetv"
-        android:layout_alignParentStart="true" />
-
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker2"
-        tools:theme="@android:style/Widget.Material.Light.TimePicker"
-        android:clickable="true"
-        android:timePickerMode="spinner"
-        android:scaleX=".5"
-        android:scaleY=".5"
-        android:layout_alignTop="@+id/datePicker"
-        android:layout_alignStart="@+id/partysizetv" />
-
-    <TextView
-        android:text="Date:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-
-        android:layout_alignTop="@+id/datePicker"
-        android:layout_toStartOf="@+id/timePicker2"
-        android:layout_marginEnd="22dp"
-        android:layout_marginTop="16dp" />
-
-    <TextView
-        android:text="Time:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toEndOf="@+id/reservetv" />
 
     <Button
         android:text="Reserve"
@@ -142,7 +175,7 @@
         android:textColor="#FFF"
         android:background="#ff7c2d"
 
-        android:id="@+id/button"
+        android:id="@+id/reservebtn"
         android:layout_below="@+id/partysize_et"
         android:layout_alignEnd="@+id/partysizetv" />
 </RelativeLayout>
