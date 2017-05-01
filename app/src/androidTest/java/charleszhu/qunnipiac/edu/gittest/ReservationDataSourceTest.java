@@ -35,6 +35,7 @@ public class ReservationDataSourceTest {
     @Test
     public void createReservation() throws Exception {
         Customer customer = dataSource.addCustomer("Rick", "137-250-8828");
+        //test adding 1st reservation
         dataSource.createReservation(customer,"06/25/2017","6:00PM", 6);
         List<Reservation> reservations = dataSource.getAllReservations();
         assertEquals(reservations.size(), 1);
@@ -42,6 +43,14 @@ public class ReservationDataSourceTest {
         && reservations.get(0).getDate().equals("06/25/2017")
                 && reservations.get(0).getTime().equals("6:00PM")
                 && (reservations.get(0).getPartySize() == 6) );
+        //test adding 2nd reservation
+        dataSource.createReservation(customer, "07/14/2017", "3:00PM", 2);
+        reservations = dataSource.getAllReservations();
+        assertEquals(reservations.size(), 2);
+        assertTrue(reservations.get(1).getCustomer() == (customer.getId())
+                && reservations.get(1).getDate().equals("07/14/2017")
+                && reservations.get(1).getTime().equals("3:00PM")
+                && (reservations.get(1).getPartySize() == 2));
     }
 
     @Test
@@ -58,6 +67,7 @@ public class ReservationDataSourceTest {
     public void changeReservation() throws Exception {
         Customer customer = dataSource.addCustomer("Morty","137-250-8829");
         dataSource.createReservation(customer,"06/25/2017","6:00PM", 6);
+        dataSource.createReservation(customer,"07/1/2018","9:00AM", 3); //TODO: Last worked on
         List<Reservation> reservations = dataSource.getAllReservations();
         dataSource.changeReservation(reservations.get(0), "07/1/2017", "9:30AM", 4);
         reservations = dataSource.getAllReservations();
