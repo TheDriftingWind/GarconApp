@@ -6,11 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by Charles on 4/24/2017.
+ * Edited by Prof. Ruby on 4/27
  */
 
 public class ReservationDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "reservations"; //database name
+    public static final String DB_NAME = "reservations"; //database name
     private static final int DB_VERSION = 1; //database version
 
     //charleszhu.qunnipiac.edu.gittest.Customer Table -----------------------------------------------
@@ -20,21 +21,28 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
     public static final String CUSTOMER_PHONE = "phone";
 
     private static final String CUSTOMER_TABLE_CREATE = "create table " + CUSTOMER_TABLE +
-            " (" + CUSTOMER_ID + "integer primary key autoincrement, " + CUSTOMER_NAME + " text not null, " +
-            CUSTOMER_PHONE + "text not null);";
+            "(" + CUSTOMER_ID + " integer primary key autoincrement, " + CUSTOMER_NAME + " text not null, " +
+            CUSTOMER_PHONE + " text not null);";
     //Reservation Table --------------------------------------------
     public static final String RESERVATION_TABLE = "reservations_table";
     public static final String RESERVATION_KEY = "_id";
-    public static final String RESERVATION_CUSTOMER = "customer";
+    public static final String RESERVATION_CUSTOMER_ID = "customerId"; //REMOVE replace with customer ID
     public static final String RESERVATION_DATE = "date";
     public static final String RESERVATION_TIME = "time";
     public static final String RESERVATION_PARTYSIZE = "party";
 
     private static final String DB_CREATE = "create table " +
-            RESERVATION_TABLE + " (" + RESERVATION_KEY + " integer primary key autoincrement, "
-            + RESERVATION_CUSTOMER + " text not null, " + RESERVATION_DATE + " text not null, " + RESERVATION_TIME + " text not null, "
+            RESERVATION_TABLE + "(" + RESERVATION_KEY + " integer primary key autoincrement, "
+            + " FOREIGN KEY(" + RESERVATION_CUSTOMER_ID + ") REFERENCES "+  CUSTOMER_TABLE + "(" +  CUSTOMER_ID +"),"
+            + RESERVATION_DATE + " text not null, "
+            + RESERVATION_TIME + " text not null, "
             + RESERVATION_PARTYSIZE + " integer not null);";
     // --------------------------------------------------------------
+	/* Here is a sample query
+	   SELECT CUSTOMER_NAME, CUSTOMER_PHONE, RESERVATION_DATE, RESERVATION_TIME
+	   FROM   CUSTOMER_TABLE, RESERVATION_TABLE
+	   WHERE CUSTOMER_ID =  RESERVATION_CUSTOMER_ID;
+	*/
     public ReservationDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }

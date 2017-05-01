@@ -24,7 +24,7 @@ public class ReservationDataSource {
     private SQLiteDatabase db;
     private ReservationDatabaseHelper dbHelper;
     private String[] reservationColumns = {ReservationDatabaseHelper.RESERVATION_KEY,
-            ReservationDatabaseHelper.RESERVATION_CUSTOMER, ReservationDatabaseHelper.RESERVATION_DATE,
+            ReservationDatabaseHelper.RESERVATION_CUSTOMER_ID, ReservationDatabaseHelper.RESERVATION_DATE,
             ReservationDatabaseHelper.RESERVATION_TIME, ReservationDatabaseHelper.RESERVATION_PARTYSIZE};
     private String[] customerColumns = {ReservationDatabaseHelper.CUSTOMER_ID,
             ReservationDatabaseHelper.CUSTOMER_NAME, ReservationDatabaseHelper.CUSTOMER_PHONE};
@@ -44,7 +44,7 @@ public class ReservationDataSource {
     public Reservation createReservation(String customer, String date, String time, long partySize){
         ContentValues values = new ContentValues();
 
-        values.put(ReservationDatabaseHelper.RESERVATION_CUSTOMER, customer);
+        values.put(ReservationDatabaseHelper.RESERVATION_CUSTOMER_ID, customer);
         values.put(ReservationDatabaseHelper.RESERVATION_DATE, date);
         values.put(ReservationDatabaseHelper.RESERVATION_TIME, time);
         values.put(ReservationDatabaseHelper.RESERVATION_PARTYSIZE, partySize);

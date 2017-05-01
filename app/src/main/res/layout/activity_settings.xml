@@ -17,72 +17,74 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:textSize="30sp"
         android:id="@+id/textView7" />
 
     <TextView
         android:text="Background Color:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_below="@id/textView7"
         android:layout_alignParentStart="true"
         android:id="@+id/textView9" />
 
-    <TextView
-        android:text="Text Size:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/textView7"
-        android:layout_alignParentStart="true" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentStart="true" >
-
-        <RadioButton
-            android:text="Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButton3"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:text="Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButton2"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:text="Large"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButton"
-            android:layout_weight="1" />
-    </RadioGroup>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView9"
-        android:layout_alignParentStart="true">
+        android:id="@+id/colorrg"
+        android:layout_alignParentStart="true"
+        android:checkedButton="@+id/whiterb">
 
         <RadioButton
-            android:text="Black"
+            android:text="White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton6"
+            android:id="@+id/whiterb"
             android:layout_weight="1" />
 
         <RadioButton
-            android:text="Blue"
+            android:text="Orange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton5"
+            android:id="@+id/bluerb"
             android:layout_weight="1" />
 
     </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Information:"
+        android:layout_below="@id/colorrg"
+        android:id="@+id/infotv"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infotv"
+        android:text="Name"
+        android:id="@+id/name_et"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_et"
+        android:text="Phone"
+        android:id="@+id/phone_et"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:background="#ff7c2d"
+        android:textColor="#FFF"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/phone_et"
+        />
 </RelativeLayout>
