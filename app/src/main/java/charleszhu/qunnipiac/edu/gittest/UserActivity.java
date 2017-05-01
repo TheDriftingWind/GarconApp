@@ -90,4 +90,32 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
         shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
         return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        switch(id) {
+            case R.id.action_help:
+//                Intent intent = new Intent(this, HelpActivity.class)
+//                startActivity(intent);
+                return true;
+            case R.id.action_settings:
+                Intent intent2 = new Intent(this, SettingsActivity.class);
+                startActivity(intent2);
+            case R.id.action_share:
+                setIntent("Made a reservation");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void setIntent(String text) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        shareActionProvider.setShareIntent(intent);
+    }
 }

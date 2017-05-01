@@ -26,17 +26,18 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
     //Reservation Table --------------------------------------------
     public static final String RESERVATION_TABLE = "reservations_table";
     public static final String RESERVATION_KEY = "_id";
-    public static final String RESERVATION_CUSTOMER_ID = "customerId"; //REMOVE replace with customer ID
+    public static final String RESERVATION_CUSTOMER_ID = "customerId";
     public static final String RESERVATION_DATE = "date";
     public static final String RESERVATION_TIME = "time";
     public static final String RESERVATION_PARTYSIZE = "party";
 
-    private static final String DB_CREATE = "create table " +
-            RESERVATION_TABLE + "(" + RESERVATION_KEY + " integer primary key autoincrement, "
-            + " FOREIGN KEY(" + RESERVATION_CUSTOMER_ID + ") REFERENCES "+  CUSTOMER_TABLE + "(" +  CUSTOMER_ID +"),"
-            + RESERVATION_DATE + " text not null, "
-            + RESERVATION_TIME + " text not null, "
-            + RESERVATION_PARTYSIZE + " integer not null);";
+private static final String DB_CREATE = "create table "
+        + RESERVATION_TABLE + " (" + RESERVATION_KEY + " integer primary key autoincrement, "
+        + RESERVATION_DATE + " text not null, "
+        + RESERVATION_TIME + " text not null, "
+        + RESERVATION_PARTYSIZE + " integer not null, "
+        + RESERVATION_CUSTOMER_ID + " integer,"
+        + " FOREIGN KEY (" + RESERVATION_CUSTOMER_ID + ") REFERENCES "+  CUSTOMER_TABLE + "(" +  CUSTOMER_ID +"));";
     // --------------------------------------------------------------
 	/* Here is a sample query
 	   SELECT CUSTOMER_NAME, CUSTOMER_PHONE, RESERVATION_DATE, RESERVATION_TIME
@@ -49,14 +50,14 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(DB_CREATE);
         sqLiteDatabase.execSQL(CUSTOMER_TABLE_CREATE);
+        sqLiteDatabase.execSQL(DB_CREATE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + RESERVATION_TABLE);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CUSTOMER_TABLE);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + RESERVATION_TABLE);
         onCreate(sqLiteDatabase);
     }
 
