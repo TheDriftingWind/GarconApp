@@ -84,6 +84,7 @@
         android:text="Save"
         android:background="#ff7c2d"
         android:textColor="#FFF"
+        android:onClick="onClick"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/phone_et"
         />
