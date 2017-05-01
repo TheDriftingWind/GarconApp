@@ -6,7 +6,7 @@ package charleszhu.qunnipiac.edu.gittest;
 
 public class Reservation {
     private long _id;
-    private String _customer;
+    private long _customer;
     private String _date;
     private String _time;
     private long _partySize;
@@ -19,11 +19,11 @@ public class Reservation {
         _id = id;
     }
 
-    public String getCustomer(){
+    public long getCustomer(){
         return _customer;
     }
 
-    public void setCustomer(String customer){
+    public void setCustomer(long customer){
         _customer = customer;
     }
 
