@@ -42,7 +42,7 @@ public class ReservationDataSource {
         db.close();
     }
     //RESERVATION TABLE
-    public Reservation createReservation(Customer customer, String date, String time, long partySize){
+    public Reservation createReservation(Customer customer, String date, String time, String partySize){
         ContentValues values = new ContentValues();
         values.put(ReservationDatabaseHelper.RESERVATION_CUSTOMER_ID, customer.getId());
         values.put(ReservationDatabaseHelper.RESERVATION_DATE, date);
@@ -105,7 +105,7 @@ public class ReservationDataSource {
         reservation.setCustomer(cursor.getLong(4));
         reservation.setDate(cursor.getString(1));
         reservation.setTime(cursor.getString(2));
-        reservation.setPartySize(cursor.getLong(3));
+        reservation.setPartySize(cursor.getString(3));
         return reservation;
     }
 

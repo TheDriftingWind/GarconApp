@@ -9,7 +9,7 @@ public class Reservation {
     private long _customer;
     private String _date;
     private String _time;
-    private long _partySize;
+    private String _partySize;
 
     public long getId(){
         return _id;
@@ -43,18 +43,18 @@ public class Reservation {
         _time = time;
     }
 
-    public long getPartySize(){
+    public String getPartySize(){
         return _partySize;
     }
 
-    public void setPartySize(long partySize){
+    public void setPartySize(String partySize){
         _partySize = partySize;
     }
 
     //The information that will be displayed on listview
     @Override
     public String toString() {
-        return ("Name:" + _customer + " " + "Date:" + _date
+        return ("Customer Id:" + _customer + " " + "Date:" + _date
                 + "\n Time:" + _time);
     }
 }

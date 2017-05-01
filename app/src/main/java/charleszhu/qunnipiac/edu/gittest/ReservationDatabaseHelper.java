@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ReservationDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "reservations"; //database name
-    private static final int DB_VERSION = 1; //database version
+    private static final int DB_VERSION = 2; //database version
 
     //charleszhu.qunnipiac.edu.gittest.Customer Table -----------------------------------------------
     public static final String CUSTOMER_TABLE = "customer_table";
@@ -35,7 +35,7 @@ private static final String DB_CREATE = "create table "
         + RESERVATION_TABLE + " (" + RESERVATION_KEY + " integer primary key autoincrement, "
         + RESERVATION_DATE + " text not null, "
         + RESERVATION_TIME + " text not null, "
-        + RESERVATION_PARTYSIZE + " integer not null, "
+        + RESERVATION_PARTYSIZE + " text not null, "
         + RESERVATION_CUSTOMER_ID + " integer,"
         + " FOREIGN KEY (" + RESERVATION_CUSTOMER_ID + ") REFERENCES "+  CUSTOMER_TABLE + "(" +  CUSTOMER_ID +"));";
     // --------------------------------------------------------------
@@ -56,9 +56,11 @@ private static final String DB_CREATE = "create table "
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CUSTOMER_TABLE);
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + RESERVATION_TABLE);
-        onCreate(sqLiteDatabase);
+        if (oldVersion < newVersion) {
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CUSTOMER_TABLE);
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + RESERVATION_TABLE);
+            onCreate(sqLiteDatabase);
+        }
     }
 
 

@@ -32,7 +32,7 @@ public class ViewReservationActivity extends Activity {
         list = (ListView) findViewById(R.id.reservation_list);
           dataSource = new ReservationDataSource(this);
         dataSource.open();
-        List<Reservation> allReservations = dataSource.getALlReservations();
+        List<Reservation> allReservations = dataSource.getAllReservations();
 
 
         ArrayAdapter<Reservation> adapter = new ArrayAdapter<Reservation>(this, android.R.layout.simple_list_item_1, allReservations);
@@ -42,7 +42,7 @@ public class ViewReservationActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Reservation reservation = (Reservation) list.getAdapter().getItem(position);
-                String customer = reservation.getCustomer();
+                Customer customer = dataSource.getAllCustomers().get(0);
                 System.out.println(customer);
 //open fragment
                 View fragmentContainer = findViewById(R.id.fragmentContainer);
@@ -51,7 +51,7 @@ public class ViewReservationActivity extends Activity {
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ReservationDetailFragment detailFragment = new ReservationDetailFragment();
                     ft.replace(R.id.fragmentContainer, detailFragment);
-                    detailFragment.setDetails(customer, "", reservation.getDate(), reservation.getTime(), Long.toString(reservation.getPartySize()));
+                    detailFragment.setDetails(customer.getName(), customer.getPhoneNum(), reservation.getDate(), reservation.getTime(), reservation.getPartySize());
 
                     ft.addToBackStack(null);
                     ft.commit();

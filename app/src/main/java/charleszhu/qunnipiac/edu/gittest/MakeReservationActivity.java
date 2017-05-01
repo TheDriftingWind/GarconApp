@@ -25,9 +25,12 @@ public class MakeReservationActivity extends Activity {
 
         name_et = (EditText)findViewById(R.id.name_et);
         phone_et = (EditText)findViewById(R.id.phone_et);
-        party_et = (EditText)findViewById(R.id.name_et);
+        party_et = (EditText)findViewById(R.id.partysize_et);
 
-        if(dataSource.getAllCustomers().size()>0){
+        dataSource = new ReservationDataSource(this);
+        dataSource.open();
+
+        if(dataSource.getAllCustomers().size() > 0){
            Customer customer= dataSource.getAllCustomers().get(0);
             name_et.setClickable(false);
             phone_et.setClickable(false);
@@ -35,8 +38,6 @@ public class MakeReservationActivity extends Activity {
             phone_et.setText(customer.getPhoneNum());
         }
 
-       dataSource = new ReservationDataSource(this);
-        dataSource.open();
     }
 
     public void onClick(View view){
@@ -47,7 +48,8 @@ public class MakeReservationActivity extends Activity {
         else customer = dataSource.getAllCustomers().get(0);
       String time = hour_et.getText().toString()+":"+minute_et.getText().toString()+" "+ampm_et.getText().toString();
        String date =  month_et.getText().toString()+"/"+day_et.getText().toString()+"/"+year_et.getText().toString();
-        dataSource.createReservation(customer.getName(), date, time, Integer.parseInt(party_et.getText().toString()) );
+        dataSource.createReservation(customer, date, time, party_et.getText().toString() );
+        finish();
     }
 
 }

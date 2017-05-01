@@ -40,7 +40,7 @@ public class EditReservationActivity extends Activity {
         dataSource.open();
 
         reservationlv = (ListView) findViewById(R.id.reservation_list);
-        List<Reservation> allReservations = dataSource.getALlReservations();
+        List<Reservation> allReservations = dataSource.getAllReservations();
         ArrayAdapter<Reservation> adapter = new ArrayAdapter<Reservation>(this, android.R.layout.simple_list_item_1, allReservations);
 
 
