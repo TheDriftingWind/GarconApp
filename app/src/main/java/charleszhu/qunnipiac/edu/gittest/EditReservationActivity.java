@@ -2,8 +2,10 @@ package charleszhu.qunnipiac.edu.gittest;
 
 import android.app.Activity;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,7 +25,18 @@ public class EditReservationActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_edit_reservation);
+
+        final View rootView = findViewById(android.R.id.content);
+        String background = getIntent().getStringExtra("Background");
+        if(background!=null) {
+            if (background.equals( "Orange"))
+                rootView.setBackgroundColor(Color.parseColor("#ff6102"));
+            else if(background.equals("White")) rootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+
+        }
+
         day_et = (EditText) findViewById(R.id.day_et);
         month_et = (EditText) findViewById(R.id.month_et);
         year_et = (EditText) findViewById(R.id.year_et);
@@ -52,7 +65,7 @@ public class EditReservationActivity extends Activity {
                      selectedReservation = (Reservation) reservationlv.getAdapter().getItem(position);
                      String date[] = selectedReservation.getDate().split("/");
                      String time[] = selectedReservation.getTime().split(":");
-                     String partySize = String.valueOf(selectedReservation.getPartySize());
+                     String partySize = selectedReservation.getPartySize();
 
                      findViewById(R.id.deletebtn).setVisibility(View.VISIBLE);
 
@@ -76,8 +89,7 @@ public class EditReservationActivity extends Activity {
         if (view.getId() == R.id.reservebtn) {
             String time = hour_et.getText().toString() + ":" + minute_et.getText().toString() + ampm_et.getText().toString();
             String date = month_et.getText().toString() + "/" + day_et.getText().toString() + "/" + year_et.getText().toString();
-            //Customer customer = dataSource.addCustomer(name_et.getText().toString(), phone_et.getText().toString());
-              dataSource.changeReservation(selectedReservation, date, time, Integer.parseInt(party_et.getText().toString()));
+              dataSource.changeReservation(selectedReservation, date, time, party_et.getText().toString());
         } else if (view.getId() == R.id.deletebtn) {
             dataSource.deleteReservation(selectedReservation);
         }

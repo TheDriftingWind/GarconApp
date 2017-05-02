@@ -63,17 +63,30 @@
         android:layout_height="wrap_content"
         android:id="@+id/timetv"
         android:textSize="20sp"
+        android:layout_toEndOf="@id/datetv"
+        android:layout_marginStart="150dp"
         android:layout_below="@+id/reservation_list"
-        android:layout_toStartOf="@+id/ampm_et" />
+        />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="01"
         android:maxLength="2"
         android:id="@+id/day_et"
-        android:layout_alignBaseline="@+id/month_et"
-        android:layout_alignBottom="@+id/month_et"
-        android:layout_toStartOf="@+id/name_et" />
+        android:layout_alignBaseline="@id/month_et"
+        android:layout_alignBottom="@id/month_et"
+        android:layout_toEndOf="@id/month_et" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08"
+        android:layout_below="@id/timetv"
+        android:maxLength="2"
+        android:layout_marginStart="50dp"
+        android:layout_toEndOf="@id/year_et"
+        android:id="@+id/hour_et"
+        />
 
     <EditText
         android:layout_width="wrap_content"
@@ -82,17 +95,10 @@
         android:maxLength="2"
         android:id="@+id/minute_et"
         android:layout_below="@+id/timetv"
-        android:layout_toLeftOf="@+id/ampm_et" />
+        android:layout_toEndOf="@id/hour_et"
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="08"
-        android:layout_below="@id/timetv"
-        android:maxLength="2"
-        android:layout_toLeftOf="@id/minute_et"
-        android:id="@+id/hour_et"
-         />
+        />
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -102,63 +108,15 @@
         android:id="@+id/ampm_et"
         android:layout_alignBaseline="@+id/minute_et"
         android:layout_alignBottom="@+id/minute_et"
-        android:layout_toEndOf="@+id/name_et" />
+        android:layout_toRightOf="@id/minute_et" />
 
-
-
-
-    <TextView
-        android:text="Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-
-        android:layout_below="@id/year_et"
-        android:id="@+id/name_tv" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:background="#ff7c2d"
-        android:layout_centerHorizontal="true"
-
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_below="@id/name_tv"
-        android:id="@+id/name_et" />
-
-
-
-    <TextView
-        android:text="Phone"
-        android:layout_below="@id/name_et"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-
-        android:id="@+id/phonetv"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-
-        android:inputType="phone"
-        android:layout_below="@id/phonetv"
-        android:ems="10"
-        android:textColor="#FFF"
-        android:background="#ff7c2d"
-
-        android:id="@+id/phone_et"
-        />
 
     <TextView
         android:text="Party Size"
-        android:layout_below="@id/phone_et"
+        android:layout_below="@id/hour_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
 
         android:id="@+id/partysizetv"/>
@@ -196,9 +154,9 @@
         android:id="@+id/deletebtn"
         android:visibility="invisible"
         android:layout_below="@+id/partysize_et"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
 
-         />
+         />             
 
 
 </RelativeLayout>

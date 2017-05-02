@@ -1,6 +1,7 @@
 package charleszhu.qunnipiac.edu.gittest;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -15,6 +16,13 @@ public class MakeReservationActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_reservation);
 
+        final View rootView = findViewById(android.R.id.content);
+        String background = getIntent().getStringExtra("Background");
+        if(background!=null) {
+            if (background.equals( "Orange"))
+                rootView.setBackgroundColor(Color.parseColor("#ff6102"));
+            else if(background.equals("White")) rootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
         day_et = (EditText)findViewById(R.id.day_et);
         month_et = (EditText)findViewById(R.id.month_et);
         year_et = (EditText)findViewById(R.id.year_et);
