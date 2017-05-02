@@ -97,8 +97,8 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
         int id = item.getItemId();
         switch(id) {
             case R.id.action_help:
-//                Intent intent = new Intent(this, HelpActivity.class)
-//                startActivity(intent);
+                Intent intent = new Intent(this, HelpActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.action_settings:
                 Intent intent2 = new Intent(this, SettingsActivity.class);
