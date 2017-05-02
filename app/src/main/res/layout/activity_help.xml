@@ -10,6 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="charleszhu.qunnipiac.edu.gittest.HelpActivity">
+
     <TableRow>
         <ImageView
             android:layout_width="100dp"
@@ -35,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:text="@string/makeLabel"
         />
 
@@ -43,7 +44,7 @@
         android:id="@+id/descriptionMake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:text="@string/makeDesc"
         />
 
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:text="@string/viewLabel"
         />
 
@@ -60,7 +61,7 @@
         android:id="@+id/descriptionView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:text="@string/viewDesc"
         />
 
@@ -69,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:text="@string/editLabel"
         />
 
@@ -77,7 +78,7 @@
         android:id="@+id/descriptionEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:text="@string/editDesc"
         />
 
@@ -86,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:text="@string/deleteLabel"
         />
 
@@ -94,18 +95,34 @@
         android:id="@+id/descriptionDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:text="@string/deleteDesc"
         />
+
+    <TextView
+        android:id="@+id/labelUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textSize="16sp"
+        android:text="@string/userLabel"
+        />
+
+    <TextView
+        android:id="@+id/descriptionUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="@string/userDesc"/>
 
     <TextView
         android:layout_marginTop="20dp"
         android:id="@+id/authorDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:text="@string/authorDesc"
         android:gravity="end"
+        />
 
-     />
 </TableLayout>

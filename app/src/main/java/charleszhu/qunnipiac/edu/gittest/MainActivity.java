@@ -14,6 +14,8 @@ public class MainActivity extends Activity {
     private Button signin_button;
     private TextView owner_greeting;
     private final String OWNER_PASSWORD = "food1234";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
