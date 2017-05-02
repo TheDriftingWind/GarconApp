@@ -11,7 +11,7 @@ import android.widget.ShareActionProvider;
 
 public class UserActivity extends Activity implements OwnerFragment.OwnerFragmentListener , CustomerFragment.CustomerFragmentListener{
 
-    private String userType;
+    private String userType, backgroundColor;
     private OwnerFragment fragmentOwner;
     private CustomerFragment fragmentCustomer;
     private ShareActionProvider shareActionProvider;
@@ -55,28 +55,48 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
     }
 
     public void onOwnerClick(View view){
-
         if(view.getId()==R.id.view_button){
-            startActivity(new Intent(UserActivity.this,ViewReservationActivity.class));
+            Intent intent =new Intent(UserActivity.this,ViewReservationActivity.class);
+            if(backgroundColor!=null)
+            intent.putExtra("Background", backgroundColor);
+
+            startActivity(intent);
         }
 
+
         if(view.getId()==R.id.add_button){
-            startActivity(new Intent(UserActivity.this, MakeReservationActivity.class));
+           Intent intent=new Intent(UserActivity.this, MakeReservationActivity.class);
+            if(backgroundColor!=null)
+                intent.putExtra("Background", backgroundColor);
+
+            startActivity(intent);
         }
 
         if (view.getId()==R.id.edit_button) {
-            startActivity(new Intent(UserActivity.this, EditReservationActivity.class));
+           Intent intent= new Intent(UserActivity.this, EditReservationActivity.class);
+            if(backgroundColor!=null)
+                intent.putExtra("Background", backgroundColor);
+
+            startActivity(intent);
         }
     }
 
     public void onCustomerClick(View view){
 
         if(view.getId()==R.id.view_button){
-            startActivity(new Intent(UserActivity.this,ViewReservationActivity.class));
+            Intent intent =new Intent(UserActivity.this,ViewReservationActivity.class);
+            if(backgroundColor!=null)
+                intent.putExtra("Background", backgroundColor);
+
+            startActivity(intent);
         }
 
         if(view.getId()==R.id.add_button){
-            startActivity(new Intent(UserActivity.this, MakeReservationActivity.class));
+            Intent intent = new Intent(UserActivity.this, MakeReservationActivity.class);
+            if(backgroundColor!=null)
+                intent.putExtra("Background", backgroundColor);
+
+            startActivity(intent);
         }
 
     }
@@ -102,7 +122,7 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
                 return true;
             case R.id.action_settings:
                 Intent intent2 = new Intent(this, SettingsActivity.class);
-                startActivity(intent2);
+                startActivityForResult(intent2, 0);
             case R.id.action_share:
                 setIntent("Made a reservation");
                 return true;
@@ -110,6 +130,13 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+       backgroundColor= data.getStringExtra("Background");
     }
 
     private void setIntent(String text) {

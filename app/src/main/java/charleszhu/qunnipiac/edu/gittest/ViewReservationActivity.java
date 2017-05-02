@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.app.ListActivity;
 import android.database.DataSetObserver;
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -28,6 +29,15 @@ public class ViewReservationActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_reservation);
+
+        final View rootView = findViewById(android.R.id.content);
+        String background = getIntent().getStringExtra("Background");
+        if(background!=null) {
+            if (background.equals("Orange"))
+                rootView.setBackgroundColor(Color.parseColor("#ff6102"));
+            else if(background.equals("White")) rootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+
+        }
 
         list = (ListView) findViewById(R.id.reservation_list);
           dataSource = new ReservationDataSource(this);

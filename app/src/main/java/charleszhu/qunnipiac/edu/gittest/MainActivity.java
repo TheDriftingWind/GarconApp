@@ -1,8 +1,12 @@
 package charleszhu.qunnipiac.edu.gittest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,10 +17,14 @@ public class MainActivity extends Activity {
    private EditText password_et;
     private Button signin_button;
     private TextView owner_greeting;
-    private final String OWNER_PASSWORD = "food1234";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       String password = Base64.encodeToString(("food1234").getBytes(), Base64.DEFAULT);
+        SharedPreferences.Editor editor = getSharedPreferences("myPreferences", Context.MODE_PRIVATE).edit();
+        editor.putString("password", password);
+        editor.apply();
         setContentView(R.layout.activity_main);
         password_et = (EditText)findViewById(R.id.password_et);
         signin_button = (Button) findViewById(R.id.signin_button);
@@ -41,7 +49,8 @@ public class MainActivity extends Activity {
     }
 
     public boolean passwordValid(String password){
-        if(password.equals(OWNER_PASSWORD)){
+        String encryptedPass = getSharedPreferences("myPreferences", Context.MODE_PRIVATE).getString("password", "");
+        if(password.equals(new String(Base64.decode(encryptedPass, Base64.DEFAULT)))){
             return true;
         }
       else return false;
