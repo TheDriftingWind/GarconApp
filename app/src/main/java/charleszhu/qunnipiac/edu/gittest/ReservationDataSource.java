@@ -65,7 +65,7 @@ public class ReservationDataSource {
                 ReservationDatabaseHelper.RESERVATION_KEY + " = " + id, null);
     }
 
-    public Reservation changeReservation(Reservation reservation, String date, String time, long partySize){
+    public Reservation changeReservation(Reservation reservation, String date, String time, String partySize){
         ContentValues values = new ContentValues();
         values.put(ReservationDatabaseHelper.RESERVATION_DATE, date);
         values.put(ReservationDatabaseHelper.RESERVATION_TIME, time);
