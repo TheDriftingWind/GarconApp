@@ -1,24 +1,15 @@
 package charleszhu.qunnipiac.edu.gittest;
 
 import android.app.FragmentTransaction;
-import android.app.ListActivity;
-import android.database.DataSetObserver;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
+
 
 public class ViewReservationActivity extends Activity {
 

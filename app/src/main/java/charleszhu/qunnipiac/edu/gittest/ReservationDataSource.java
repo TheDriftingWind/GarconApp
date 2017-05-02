@@ -43,41 +43,48 @@ public class ReservationDataSource {
     }
     //RESERVATION TABLE
     public Reservation createReservation(Customer customer, String date, String time, String partySize){
+        //create values to insert into the table
         ContentValues values = new ContentValues();
         values.put(ReservationDatabaseHelper.RESERVATION_CUSTOMER_ID, customer.getId());
         values.put(ReservationDatabaseHelper.RESERVATION_DATE, date);
         values.put(ReservationDatabaseHelper.RESERVATION_TIME, time);
         values.put(ReservationDatabaseHelper.RESERVATION_PARTYSIZE, partySize);
-
+        //insert values in respective columns
         long insertId = db.insert(ReservationDatabaseHelper.RESERVATION_TABLE, null, values);
         Cursor cursor = db.query(ReservationDatabaseHelper.RESERVATION_TABLE,
                 reservationColumns, ReservationDatabaseHelper.RESERVATION_KEY +
                 " = " + insertId, null, null, null, null);
         cursor.moveToFirst();
+        //convert cursor to reservation data type to return information
         Reservation newReservation = cursorToReservation(cursor);
         cursor.close();
         return newReservation;
     }
 
     public void deleteReservation(Reservation reservation){
+        //get id of reservation to find
         long id = reservation.getId();
+        //find and delete where the id is found
         db.delete(ReservationDatabaseHelper.RESERVATION_TABLE,
                 ReservationDatabaseHelper.RESERVATION_KEY + " = " + id, null);
     }
 
     public Reservation changeReservation(Reservation reservation, String date, String time, String partySize){
+        //create value to be used to update respective columns
         ContentValues values = new ContentValues();
         values.put(ReservationDatabaseHelper.RESERVATION_DATE, date);
         values.put(ReservationDatabaseHelper.RESERVATION_TIME, time);
         values.put(ReservationDatabaseHelper.RESERVATION_PARTYSIZE, partySize);
-
+        //get the id of the reservation selected to find in the table
         long id = reservation.getId();
+        //update where id is found
         db.update(ReservationDatabaseHelper.RESERVATION_TABLE, values,
                 ReservationDatabaseHelper.RESERVATION_KEY + " = " + id, null);
         Cursor cursor = db.query(ReservationDatabaseHelper.RESERVATION_TABLE,
                 reservationColumns, ReservationDatabaseHelper.RESERVATION_KEY +
                         " = " + id, null, null, null, null);
         cursor.moveToFirst();
+        //convert to reservation to return information
         Reservation newReservation = cursorToReservation(cursor);
         cursor.close();
         return newReservation;
@@ -85,17 +92,20 @@ public class ReservationDataSource {
     }
 
     public List<Reservation> getAllReservations(){
+        //create list of reservations
         List<Reservation> reservations = new ArrayList<Reservation>();
         Cursor cursor = db.query(ReservationDatabaseHelper.RESERVATION_TABLE,
                 reservationColumns, null, null, null, null, null);
         cursor.moveToFirst();
+        //retrieve every reservation in the table
         while(! cursor.isAfterLast()){
+            //convert to reservation data type before adding it to list
             Reservation reservation = cursorToReservation(cursor);
             reservations.add(reservation);
             cursor.moveToNext();
         }
         cursor.close();
-
+        //return the list of reservations
         return reservations;
     }
 
@@ -112,16 +122,19 @@ public class ReservationDataSource {
     //CUSTOMER TABLE
     public Customer addCustomer(String name, String phone){
         ContentValues values = new ContentValues();
-
+        //define values to put in respective columns
         values.put(ReservationDatabaseHelper.CUSTOMER_NAME, name);
         values.put(ReservationDatabaseHelper.CUSTOMER_PHONE, phone);
-
+        //add the customer information save the id for the return
         long insertId = db.insert(ReservationDatabaseHelper.CUSTOMER_TABLE, null, values);
+        //use id to query for information
        Cursor cursor = db.query(ReservationDatabaseHelper.CUSTOMER_TABLE, customerColumns,
                ReservationDatabaseHelper.CUSTOMER_ID + " = " + insertId, null, null, null, null);
         cursor.moveToFirst();
+        //convert information to customer data type
         Customer newCustomer = cursorToCustomer(cursor);
         cursor.close();
+        //return data type for displaying information
         return newCustomer;
     }
 

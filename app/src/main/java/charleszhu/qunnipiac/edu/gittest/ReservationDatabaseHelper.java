@@ -14,7 +14,7 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "reservations"; //database name
     private static final int DB_VERSION = 2; //database version
 
-    //charleszhu.qunnipiac.edu.gittest.Customer Table -----------------------------------------------
+    //--------------Customer Table -------------------------------------
     public static final String CUSTOMER_TABLE = "customer_table";
     public static final String CUSTOMER_ID = "id";
     public static final String CUSTOMER_NAME = "name";
@@ -30,7 +30,7 @@ public class ReservationDatabaseHelper extends SQLiteOpenHelper {
     public static final String RESERVATION_DATE = "date";
     public static final String RESERVATION_TIME = "time";
     public static final String RESERVATION_PARTYSIZE = "party";
-
+//String to be executed to create reservation table. Foreign key link to customer table
 private static final String DB_CREATE = "create table "
         + RESERVATION_TABLE + " (" + RESERVATION_KEY + " integer primary key autoincrement, "
         + RESERVATION_DATE + " text not null, "
@@ -56,6 +56,7 @@ private static final String DB_CREATE = "create table "
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        //Check for current version of database, if old, replace with new version
         if (oldVersion < newVersion) {
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CUSTOMER_TABLE);
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + RESERVATION_TABLE);

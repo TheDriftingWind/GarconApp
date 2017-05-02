@@ -14,6 +14,7 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
     private String userType, backgroundColor;
     private OwnerFragment fragmentOwner;
     private CustomerFragment fragmentCustomer;
+    //share action provider to sending share intents
     private ShareActionProvider shareActionProvider;
 
     @Override

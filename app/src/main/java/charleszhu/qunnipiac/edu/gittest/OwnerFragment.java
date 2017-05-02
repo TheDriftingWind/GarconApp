@@ -9,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.security.acl.Owner;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,20 +36,24 @@ private OwnerFragmentListener listener;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        //attach listener so that the activity can implement onClick methods
         this.listener = (OwnerFragmentListener)activity;
     }
 
     public void onOwnerClick(View view){
 
         if(view.getId()==R.id.view_button){
+            //starts View Reservation activity
             startActivity(new Intent(getActivity(),ViewReservationActivity.class));
         }
 
         if(view.getId()==R.id.add_button){
+            //starts Make Reservation activity
               startActivity(new Intent(getActivity(), MakeReservationActivity.class));
         }
 
         else{
+            //starts Edit Reservation activity
               startActivity(new Intent(getActivity(), EditReservationActivity.class));
         }
     }

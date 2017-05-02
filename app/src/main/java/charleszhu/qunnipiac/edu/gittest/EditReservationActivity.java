@@ -1,19 +1,13 @@
 package charleszhu.qunnipiac.edu.gittest;
 
 import android.app.Activity;
-import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TimePicker;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class EditReservationActivity extends Activity {

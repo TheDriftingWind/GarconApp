@@ -36,16 +36,19 @@ public class CustomerFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        //attach listener so that the activity can implement onClick method
         this.listener = (CustomerFragment.CustomerFragmentListener)activity;
     }
 
     public void onCustomerClick(View view){
 
         if(view.getId()==R.id.view_button){
+            //starts the View Reservation Activity
             startActivity(new Intent(getActivity(),ViewReservationActivity.class));
         }
 
         if(view.getId()==R.id.add_button){
+            //starts the Add Reservation Activity
             startActivity(new Intent(getActivity(), MakeReservationActivity.class));
         }
         

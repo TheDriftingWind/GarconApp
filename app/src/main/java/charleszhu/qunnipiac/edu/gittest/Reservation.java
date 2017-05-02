@@ -22,7 +22,7 @@ public class Reservation {
     public long getCustomer(){
         return _customer;
     }
-
+    //setters and getters
     public void setCustomer(long customer){
         _customer = customer;
     }

@@ -4,9 +4,8 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TimePicker;
+
 
 public class MakeReservationActivity extends Activity {
     private ReservationDataSource dataSource;
