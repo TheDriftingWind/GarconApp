@@ -28,5 +28,22 @@
         completions."
     </string>
 
+    <!-- Help Activity Strings -->
+    <string name="authorDesc">App made by Carly Emile and Charles Zhu</string>
+    <string name="makeLabel">Make A Reservation</string>
+    <string name="editLabel">Edit A Reservation</string>
+    <string name="deleteLabel">Delete A Reservation</string>
+    <string name="viewLabel">View A Reservation</string>
+    <string name="makeDesc">To make a reservation navigate to the Make Reservation screen and fill out the information requested by the text field</string>
 
+    <string name="viewDesc">"To view a reservation, navigate to the View Reservation screen. Tap on a reservation in the list to view details of that reservation</string>
+
+    <string name="deleteDesc">To delete a reservation, navigate to the Edit Reservation
+        screen and tap on the reservation in the list that you\'d like to delete. Then,
+        simply press the \'Delete\' button to remove. This action cannot be un-done.</string>
+
+    <string name="editDesc">"To edit a reservation, navigate to the Edit Reservation screen and tap on the reservation in the list that you'd like to change. Enter the new information and press the update button.</string>
+    <string name="userLabel">Change Name or Phone Number</string>
+    <string name="userDesc">To change name or phone number, go to settings after the log in screen.
+        Make changes and press the button to update.</string>
 </resources>
