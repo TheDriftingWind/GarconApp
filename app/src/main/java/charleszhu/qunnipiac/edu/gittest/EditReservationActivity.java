@@ -41,7 +41,7 @@ public class EditReservationActivity extends Activity {
 
         name_et = (EditText) findViewById(R.id.name_et);
         phone_et = (EditText) findViewById(R.id.phone_et);
-        party_et = (EditText) findViewById(R.id.name_et);
+        party_et = (EditText) findViewById(R.id.partysize_et);
 
         dataSource = new ReservationDataSource(this);
         dataSource.open();
@@ -86,6 +86,7 @@ public class EditReservationActivity extends Activity {
               dataSource.changeReservation(selectedReservation, date, time, party_et.getText().toString());
         } else if (view.getId() == R.id.deletebtn) {
             dataSource.deleteReservation(selectedReservation);
+            finish();
         }
     }
 }
