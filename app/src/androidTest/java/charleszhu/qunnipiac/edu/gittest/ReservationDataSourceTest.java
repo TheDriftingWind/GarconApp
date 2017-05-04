@@ -67,7 +67,7 @@ public class ReservationDataSourceTest {
     public void changeReservation() throws Exception {
         Customer customer = dataSource.addCustomer("Morty","137-250-8829");
         dataSource.createReservation(customer,"06/25/2017","6:00PM", "6");
-        dataSource.createReservation(customer,"07/1/2018","9:00AM", "3"); //TODO: Last worked on
+        dataSource.createReservation(customer,"07/1/2018","9:00AM", "3");
         List<Reservation> reservations = dataSource.getAllReservations();
         dataSource.changeReservation(reservations.get(0), "07/1/2017", "9:30AM", "4");
         reservations = dataSource.getAllReservations();
