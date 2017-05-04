@@ -8,7 +8,11 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+/*
+ * Created by Carly
+ * Owner fragment directs the owner user to the make, view and edit reservation activities.
+ * [Contained in the user activity.]
+ */
 
 /**
  * A simple {@link Fragment} subclass.

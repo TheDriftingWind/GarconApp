@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+/*
+ * Created by Carly
+ * Make reservation activity adds new reservations to the database
+ */
 
 public class MakeReservationActivity extends Activity {
     private ReservationDataSource dataSource;

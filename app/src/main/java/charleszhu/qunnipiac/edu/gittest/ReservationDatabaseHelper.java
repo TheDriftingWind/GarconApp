@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Charles on 4/24/2017.
  * Edited by Prof. Ruby on 4/27
+ * Database helper creates acts to create the database tables to store customer and reservation
+ * information
  */
 
 public class ReservationDatabaseHelper extends SQLiteOpenHelper {

@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by Charles on 4/25/2017.
+ * Datasource class contains all the methods that will be used to perform actions on the database.
  */
 
 public class ReservationDataSource {

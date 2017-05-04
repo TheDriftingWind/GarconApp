@@ -10,6 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.List;
 
+/*
+ * Created by Carly
+ * View activity allows user to view a list of reservations in the database
+ */
 
 public class ViewReservationActivity extends Activity {
 

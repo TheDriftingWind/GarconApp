@@ -12,6 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/*
+ * Created by Carly
+ * Main splash screen. Contains 2 buttons that decides which fragment will be displayed
+ * in the next activity.
+ */
 public class MainActivity extends Activity {
 
    private EditText password_et;

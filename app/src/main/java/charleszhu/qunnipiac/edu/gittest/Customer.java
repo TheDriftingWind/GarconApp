@@ -2,6 +2,7 @@ package charleszhu.qunnipiac.edu.gittest;
 
 /**
  * Created by Carly on 4/26/2017.
+ * Customer data type used to store information taken from the customers table in the database
  */
 
 public class Customer {

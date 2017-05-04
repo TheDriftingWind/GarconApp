@@ -8,6 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ShareActionProvider;
+/*
+ * Create by Charles, Editted by Carly
+ * User activity acts as the container for the Owner/Customer fragment. It is the "central hub" for
+ * application activities that directs the user to the View,Make, and Edit Reservation activities.
+ */
 
 public class UserActivity extends Activity implements OwnerFragment.OwnerFragmentListener , CustomerFragment.CustomerFragmentListener{
 

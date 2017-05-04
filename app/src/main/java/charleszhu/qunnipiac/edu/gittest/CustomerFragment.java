@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-/**
+/*
+ * Created by Charles
  * A simple {@link Fragment} subclass.
+ * Customer fragment directs customer user to make and view reservation activities.
  */
 public class CustomerFragment extends Fragment {
     

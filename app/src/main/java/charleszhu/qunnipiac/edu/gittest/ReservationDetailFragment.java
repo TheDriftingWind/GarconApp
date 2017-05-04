@@ -9,8 +9,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-/**
+/*
  * A simple {@link Fragment} subclass.
+ * Created by Carly
+ * Detail fragment displays specific information about the reservation that is selected in the view
+ * reservation activity.
  */
 public class ReservationDetailFragment extends Fragment {
 

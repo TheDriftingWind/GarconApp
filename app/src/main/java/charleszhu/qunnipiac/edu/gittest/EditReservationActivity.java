@@ -9,7 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import java.util.List;
-
+/*
+ * Created by Carly
+ * EditReservation activity takes existing reservations and changes the values to certain columns
+ */
 public class EditReservationActivity extends Activity {
     private ReservationDataSource dataSource;
     private EditText party_et, minute_et, hour_et, day_et, month_et, year_et, ampm_et;

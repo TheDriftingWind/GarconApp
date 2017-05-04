@@ -2,6 +2,7 @@ package charleszhu.qunnipiac.edu.gittest;
 
 /**
  * Created by Charles on 4/25/2017.
+ * Reservation class is the data type to store reservation information taken from the database
  */
 
 public class Reservation {

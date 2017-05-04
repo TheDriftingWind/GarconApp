@@ -8,6 +8,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+/*
+ * Created by Carly
+ * Activity changes the background color and customer information(name and phone)
+ */
+
 public class SettingsActivity extends Activity {
 
     ReservationDataSource dataSource;
