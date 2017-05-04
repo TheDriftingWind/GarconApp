@@ -23,12 +23,15 @@ public class SettingsActivity extends Activity {
 
         dataSource = new ReservationDataSource(getBaseContext());
         dataSource.open();
+
+        //inputs current customer information into edit texts
         if(dataSource.getAllCustomers().size()>0) {
             Customer customer = dataSource.getAllCustomers().get(0);
             name_et.setText(customer.getName());
             phone_et.setText(customer.getPhoneNum());
         }
 
+        //gets chosen background color
         colorrg = (RadioGroup)findViewById(R.id.colorrg);
         colorrg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -44,13 +47,14 @@ public class SettingsActivity extends Activity {
 
     public void onClick(View view){
 
+        //replaces customer information
         if(dataSource.getAllCustomers().size()>0)
             dataSource.forgetCustomer( dataSource.getAllCustomers().get(0));
         dataSource.addCustomer(name_et.getText().toString(), phone_et.getText().toString());
 
         Intent intent = new Intent();
         intent.putExtra("Background", chosenColor);
-        setResult(0, intent);
+        setResult(0, intent); //sends chosen background color back to user activity
         finish();
     }
 

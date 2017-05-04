@@ -28,6 +28,10 @@ public class ReservationDetailFragment extends Fragment {
 
     }
 
+    /**
+     * setDetails:
+     * Sets current values from the selected reservation
+     */
     public void setDetails(String name, String phone, String date, String time, String partySize){
         this.name = name;
         this.phone = phone;
@@ -37,6 +41,10 @@ public class ReservationDetailFragment extends Fragment {
 
     }
 
+    /***
+     * onViewCreated:
+     * Sets the textviews to display the values of the clicked reservation
+     */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

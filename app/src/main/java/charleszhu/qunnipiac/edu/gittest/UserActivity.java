@@ -32,7 +32,7 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
         super.onStart();
 
         //if i.getString == "customer" put customerfragment in fragment container
-        //if i.getString == "ownerfragment" put ownerfragment in the fragment container
+        //if i.getString == "owner" put ownerfragment in the fragment container
         View fragmentContainer = findViewById(R.id.fragmentContainer);
         if (fragmentContainer != null) {
             fragmentOwner = new OwnerFragment();
@@ -40,7 +40,7 @@ public class UserActivity extends Activity implements OwnerFragment.OwnerFragmen
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             if (userType.equals("Owner")) {
                 ft.replace(R.id.fragmentContainer, fragmentOwner);
-            } else if (userType.equals("charleszhu.qunnipiac.edu.gittest.Customer")) {
+            } else if (userType.equals("Customer")) {
                 ft.replace(R.id.fragmentContainer, fragmentCustomer);
             }
             /*

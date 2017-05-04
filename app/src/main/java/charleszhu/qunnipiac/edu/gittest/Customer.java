@@ -6,10 +6,13 @@ package charleszhu.qunnipiac.edu.gittest;
 
 public class Customer {
 
+    //variables
     private long id;
     private String name;
     private String phone;
 
+
+    //setters and getters
     public void setId(long id) {
         this.id = id;
     }

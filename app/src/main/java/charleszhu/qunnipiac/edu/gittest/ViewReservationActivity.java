@@ -22,6 +22,8 @@ public class ViewReservationActivity extends Activity {
         setContentView(R.layout.activity_view_reservation);
 
         final View rootView = findViewById(android.R.id.content);
+
+        //gets the chosen background color from the settings and sets the activity background
         String background = getIntent().getStringExtra("Background");
         if(background!=null) {
             if (background.equals("Orange"))
@@ -30,6 +32,7 @@ public class ViewReservationActivity extends Activity {
 
         }
 
+        //Creates the reservation list and displays reservations from database
         list = (ListView) findViewById(R.id.reservation_list);
           dataSource = new ReservationDataSource(this);
         dataSource.open();
@@ -39,15 +42,16 @@ public class ViewReservationActivity extends Activity {
         ArrayAdapter<Reservation> adapter = new ArrayAdapter<Reservation>(this, android.R.layout.simple_list_item_1, allReservations);
         list.setAdapter(adapter);
 
+        //Displays the details of a reservation when selected
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Reservation reservation = (Reservation) list.getAdapter().getItem(position);
-                Customer customer = dataSource.getAllCustomers().get(0);
-                System.out.println(customer);
-//open fragment
+                Reservation reservation = (Reservation) list.getAdapter().getItem(position); //gets the selected reservation
+                Customer customer = dataSource.getAllCustomers().get(0); // gets the current customer
+
                 View fragmentContainer = findViewById(R.id.fragmentContainer);
 
+                //sets the selected reservation details and replaces the fragment
                 if (fragmentContainer != null) {
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ReservationDetailFragment detailFragment = new ReservationDetailFragment();
